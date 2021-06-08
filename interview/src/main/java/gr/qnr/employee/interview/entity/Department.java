@@ -18,4 +18,28 @@ public class Department {
     @ManyToOne
     @JoinColumn(name = "LocId", insertable = false, updatable = false)
     private DepartmentLocation departmentLocation;
+
+    public int getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(int departmentId) {
+        this.departmentId = departmentId;
+    }
+
+    public String getDepartmentName() {
+        return departmentName;
+    }
+
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
+    }
+
+    public DepartmentLocation getDepartmentLocation() {
+        return departmentLocation;
+    }
+
+    public void setDepartmentLocation(DepartmentLocation departmentLocation) {
+        this.departmentLocation = departmentLocation;
+    }
 }

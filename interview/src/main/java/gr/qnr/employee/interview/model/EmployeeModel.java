@@ -1,45 +1,29 @@
-package gr.qnr.employee.interview.entity;
+package gr.qnr.employee.interview.model;
 
-import javax.persistence.*;
+import gr.qnr.employee.interview.entity.Department;
 
+import javax.xml.bind.annotation.XmlRootElement;
 
-@Entity
-@Table(name = "EMPLOYEES")
-public class Employee {
-    private static final int LAST_NAME_LENGTH  = 20;
-    private static final int FIRST_NAME_LENGTH  = 15;
-    private static final int JOB_LENGTH  = 9;
-
-    @Id
-    @Column(name = "Empid", nullable = false)
-    @GeneratedValue(strategy= GenerationType.AUTO)
+@XmlRootElement(name = "Employee")
+public class EmployeeModel {
     private int employeeId;
 
-    @Column(name = "Lastname", length = LAST_NAME_LENGTH)
     private String lastName;
 
-    @Column(name = "Firstname", length = FIRST_NAME_LENGTH)
     private String firstName;
 
-    @Column(name = "Job", length = JOB_LENGTH)
     private String job;
 
-    @Column(name = "MNGID")
     private int managerId;
 
     // check datetime in spring
-    @Column(name = "Hiredate")
     private String hireDate;
 
-    @Column(precision=10, scale=2)
     private float salary;
 
-    @Column(precision=7, scale=2)
     private float comm;
 
-    @ManyToOne
-    @JoinColumn(name = "DeptId", insertable = false, updatable = false)
-    private Department department;
+    private int departmentId;
 
     public int getEmployeeId() {
         return employeeId;
@@ -105,11 +89,26 @@ public class Employee {
         this.comm = comm;
     }
 
-    public Department getDepartment() {
-        return department;
+    public int getDepartmentId() {
+        return departmentId;
     }
 
-    public void setDepartment(Department department) {
-        this.department = department;
+    public void setDepartmentId(int departmentId) {
+        this.departmentId = departmentId;
+    }
+
+    public EmployeeModel() {
+    }
+
+    public EmployeeModel(int employeeId, String lastName, String firstName, String job, int managerId, String hireDate, float salary, float comm, int departmentId) {
+        this.employeeId = employeeId;
+        this.lastName = lastName;
+        this.firstName = firstName;
+        this.job = job;
+        this.managerId = managerId;
+        this.hireDate = hireDate;
+        this.salary = salary;
+        this.comm = comm;
+        this.departmentId = departmentId;
     }
 }

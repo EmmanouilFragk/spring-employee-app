@@ -1,19 +1,12 @@
-package gr.qnr.employee.interview.entity;
+package gr.qnr.employee.interview.model;
 
-import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement(name = "DepartmentLocation")
+public class DepartmentLocationModel {
 
-@Entity
-@Table(name = "Dept_Locations")
-public class DepartmentLocation {
-    private static final int LOCATION_NAME_LENGTH  = 50;
-
-    @Id
-    @Column(name = "LocId", nullable = false)
-    @GeneratedValue(strategy= GenerationType.AUTO)
     private int locationId;
 
-    @Column(name = "Locname", length = LOCATION_NAME_LENGTH)
     private String locationName;
 
     public int getLocationId() {
@@ -29,6 +22,14 @@ public class DepartmentLocation {
     }
 
     public void setLocationName(String locationName) {
+        this.locationName = locationName;
+    }
+
+    public DepartmentLocationModel() {
+    }
+
+    public DepartmentLocationModel(int locationId, String locationName) {
+        this.locationId = locationId;
         this.locationName = locationName;
     }
 }
