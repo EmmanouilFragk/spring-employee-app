@@ -1,6 +1,7 @@
 package gr.qnr.employee.interview.entity;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 
 @Entity
@@ -29,7 +30,7 @@ public class Employee {
 
     // check datetime in spring
     @Column(name = "Hiredate")
-    private String hireDate;
+    private Timestamp hireDate;
 
     @Column(precision=10, scale=2)
     private float salary;
@@ -81,11 +82,11 @@ public class Employee {
         this.managerId = managerId;
     }
 
-    public String getHireDate() {
+    public Timestamp getHireDate() {
         return hireDate;
     }
 
-    public void setHireDate(String hireDate) {
+    public void setHireDate(Timestamp hireDate) {
         this.hireDate = hireDate;
     }
 

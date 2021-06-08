@@ -23,7 +23,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                 employee.getFirstName(),
                 employee.getJob(),
                 employee.getManagerId(),
-                employee.getHireDate(),
+                employee.getHireDate().toString(),
                 employee.getSalary(),
                 employee.getComm(),
                 2);
@@ -40,7 +40,7 @@ public class EmployeeServiceImpl implements EmployeeService {
                     employee.getFirstName(),
                     employee.getJob(),
                     employee.getManagerId(),
-                    employee.getHireDate(),
+                    employee.getHireDate().toString(),
                     employee.getSalary(),
                     employee.getComm(),
                     employee.getDepartment().getDepartmentId()));
