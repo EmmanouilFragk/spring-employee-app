@@ -61,4 +61,55 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         return employeeModels;
     }
+
+    @Override
+    public List<EmployeeModel> findEmployees(String firstName, String lastName) {
+        List<EmployeeModel> employeeModels = new ArrayList<>();
+        if (!firstName.isEmpty() && !lastName.isEmpty()) {
+            List<Employee> employees = employeeRepository.findEmployeesByFirstNameLikeAndLastNameLike(firstName, lastName);
+            for (Employee employee : employees) {
+                employeeModels.add(new EmployeeModel(employee.getEmployeeId(),
+                        employee.getLastName(),
+                        employee.getFirstName(),
+                        employee.getJob(),
+                        employee.getManagerId(),
+                        employee.getHireDate().toString(),
+                        employee.getSalary(),
+                        employee.getComm(),
+                        employee.getDepartment().getDepartmentId()));
+
+            }
+            return employeeModels;
+        }
+        List<Employee> employees = employeeRepository.findEmployeesByFirstNameLike(firstName);
+
+        for (Employee employee : employees) {
+            employeeModels.add(new EmployeeModel(employee.getEmployeeId(),
+                    employee.getLastName(),
+                    employee.getFirstName(),
+                    employee.getJob(),
+                    employee.getManagerId(),
+                    employee.getHireDate().toString(),
+                    employee.getSalary(),
+                    employee.getComm(),
+                    employee.getDepartment().getDepartmentId()));
+
+        }
+
+        employees = employeeRepository.findEmployeesByLastNameLike(lastName);
+
+        for (Employee employee : employees) {
+            employeeModels.add(new EmployeeModel(employee.getEmployeeId(),
+                    employee.getLastName(),
+                    employee.getFirstName(),
+                    employee.getJob(),
+                    employee.getManagerId(),
+                    employee.getHireDate().toString(),
+                    employee.getSalary(),
+                    employee.getComm(),
+                    employee.getDepartment().getDepartmentId()));
+
+        }
+        return employeeModels;
+    }
 }

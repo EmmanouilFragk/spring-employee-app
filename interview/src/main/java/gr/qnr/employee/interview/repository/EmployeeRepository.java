@@ -9,4 +9,7 @@ import java.util.List;
 public interface EmployeeRepository extends CrudRepository<Employee, Long> {
     List<Employee> findAllByDepartmentDepartmentId(int id);
     Employee findByEmployeeId(int id);
+    List<Employee> findEmployeesByFirstNameLike(String firstName);
+    List<Employee> findEmployeesByLastNameLike(String lastName);
+    List<Employee> findEmployeesByFirstNameLikeAndLastNameLike(String firstName, String lastname);
 }

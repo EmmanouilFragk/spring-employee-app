@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface EmployeeService {
     EmployeeModel findEmployee(int id);
+    List<EmployeeModel> findEmployees(String firstName, String lastName);
     List<EmployeeModel> findEmployeesByDepartmentId(int id);
 }
