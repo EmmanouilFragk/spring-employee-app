@@ -121,7 +121,7 @@
         };
         if (!(document.getElementById('employeeId').value === '')) {
             id = document.getElementById('employeeId').value;
-            xhttp.open("GET", "/employee/"+id, true);
+            xhttp.open("GET", "/employee-details/"+id, true);
             xhttp.send();
         }
 

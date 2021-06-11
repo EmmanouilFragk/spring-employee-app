@@ -19,7 +19,7 @@ public class EmployeeDetailsRestController {
     @Autowired
     EmployeeService employeeService;
 
-    @RequestMapping(value = "/employee/{empId}", produces = { MediaType.APPLICATION_XML_VALUE  })
+    @RequestMapping(value = "/employee-details/{empId}", produces = { MediaType.APPLICATION_XML_VALUE  })
     public ResponseEntity<EmployeeModel> getEmployee(@PathVariable(value = "empId") int empId) throws IOException {
         EmployeeModel employeeModel = employeeService.findEmployee(empId);
         if (employeeModel != null) {

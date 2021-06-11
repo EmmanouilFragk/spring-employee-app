@@ -81,7 +81,18 @@
                     </div>
                     <div class="card-body">
                         <section class="content col-md-3">
+                            <label><spring:message
+                                    code="enter.name.label"></spring:message></label>
+                            <input type="text" id="name"/>
 
+                            <button class="btn btn-primary" id="requestLoadData" type="button" onclick="loadData()">
+                                <spring:message
+                                        code="load.data"></spring:message>
+                            </button>
+
+
+                            <textarea rows="20" cols="80" style="border:none;">
+                            </textarea>
 
                         </section>
                     </div>
@@ -97,3 +108,33 @@
 
 </body>
 </html>
+
+<script>
+    function loadData() {
+
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                myFunction(this);
+            }
+        };
+        if (!(document.getElementById('name').value === '')) {
+            str = document.getElementById('name').value;
+            par1 = str.split(" ")[0];
+            if (str.split(" ")[1] == undefined) par2 = ""
+            else par2 = str.split(" ")[1]
+            params = {
+                "firstName": par1,
+                "lastName": par2
+            };
+
+            xhttp.open("POST", "/employee/search", true);
+            xhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+            xhttp.send(JSON.stringify(params));
+        }
+
+    }
+    function myFunction(xml) {
+        $('textarea').val(xml.responseText);
+    }
+</script>
