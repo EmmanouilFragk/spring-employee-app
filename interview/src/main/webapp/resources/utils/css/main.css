@@ -1,0 +1,68 @@
+/* LOGIN PAGE */
+.logo-image {
+	width: 200px !important;
+}
+
+.login-header {
+	line-height: 3.5;
+}
+
+.login-form {
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+
+/* VARIOUS */
+.m-0 {
+	margin: 0 !important;
+}
+
+.m-b-30 {
+	margin-bottom: 30px;
+}
+
+.m-b-50 {
+	margin-bottom: 50px;
+}
+
+.m-t-10 {
+	margin-top: 10px;
+}
+
+.m-t-30 {
+	margin-top: 30px;
+}
+
+.m-t-50 {
+	margin-top: 50px;
+}
+
+.p-20 {
+	padding: 20px;
+}
+
+.min-h-100 {
+	min-height: 100px;
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.error {
+	color: red;
+}
+
+.menu-list {
+	list-style: none;
+	padding-left: 20px;
+}
+
+.content-wrapper {
+	padding: 30px 20px;
+}
+
+.filters-row {
+	padding: 1.25rem;
+}

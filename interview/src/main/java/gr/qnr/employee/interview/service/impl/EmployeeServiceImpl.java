@@ -17,16 +17,29 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public EmployeeModel findEmployee(int id) {
-        Employee employee = employeeRepository.findByEmployeeId(1);
-        EmployeeModel employeeModel = new EmployeeModel(employee.getEmployeeId(),
-                employee.getLastName(),
-                employee.getFirstName(),
-                employee.getJob(),
-                employee.getManagerId(),
-                employee.getHireDate().toString(),
-                employee.getSalary(),
-                employee.getComm(),
-                2);
+        EmployeeModel employeeModel;
+        Employee employee = employeeRepository.findByEmployeeId(id);
+        if (employee != null) {
+            employeeModel = new EmployeeModel(employee.getEmployeeId(),
+                    employee.getLastName(),
+                    employee.getFirstName(),
+                    employee.getJob(),
+                    employee.getManagerId(),
+                    employee.getHireDate().toString(),
+                    employee.getSalary(),
+                    employee.getComm(),
+                    employee.getDepartment().getDepartmentId());
+        } else {
+            employeeModel = new EmployeeModel(-1,
+                    "",
+                    "",
+                    "",
+                    -1,
+                    "",
+                    0,
+                    0,
+                    -1);
+        }
         return employeeModel;
     }
 

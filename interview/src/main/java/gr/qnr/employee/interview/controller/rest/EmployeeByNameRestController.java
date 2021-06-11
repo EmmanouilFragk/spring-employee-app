@@ -15,13 +15,5 @@ import java.util.List;
 
 @RestController
 public class EmployeeByNameRestController {
-    @Autowired
-    EmployeeService employeeService;
 
-    @RequestMapping(value = "/employees/{departmentId}")
-    public EmployeeModelList<EmployeeModel> getEmployeesByDepartment(@PathVariable int departmentId) throws IOException {
-        List<EmployeeModel> employeeModels = employeeService.findEmployeesByDepartmentId(departmentId);
-        EmployeeModelList<EmployeeModel> modelList = new EmployeeModelList<>(employeeModels);
-        return modelList;
-    }
 }

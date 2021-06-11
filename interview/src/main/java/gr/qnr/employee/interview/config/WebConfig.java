@@ -11,4 +11,6 @@ public class WebConfig implements WebMvcConfigurer {
     public void configureContentNegotiation(final ContentNegotiationConfigurer configurer) {
         configurer.defaultContentType(MediaType.APPLICATION_XML);
     }
+
+
 }
