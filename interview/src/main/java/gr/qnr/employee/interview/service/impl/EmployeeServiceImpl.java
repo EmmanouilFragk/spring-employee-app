@@ -112,4 +112,24 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         return employeeModels;
     }
+
+    @Override
+    public List<EmployeeModel> findEmployees(String name) {
+        List<EmployeeModel> employeeModels = new ArrayList<>();
+        List<Employee> employees = employeeRepository.findEmployeesBySearch(name);
+
+        for (Employee employee : employees) {
+            employeeModels.add(new EmployeeModel(employee.getEmployeeId(),
+                    employee.getLastName(),
+                    employee.getFirstName(),
+                    employee.getJob(),
+                    employee.getManagerId(),
+                    employee.getHireDate().toString(),
+                    employee.getSalary(),
+                    employee.getComm(),
+                    employee.getDepartment().getDepartmentId()));
+
+        }
+        return employeeModels;
+    }
 }

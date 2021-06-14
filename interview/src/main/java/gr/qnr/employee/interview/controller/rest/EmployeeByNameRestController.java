@@ -22,7 +22,7 @@ public class EmployeeByNameRestController {
 
     @RequestMapping(value = "/employee/search", method = RequestMethod.POST, produces = { MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE  }, consumes = { MediaType.APPLICATION_XML_VALUE,MediaType.APPLICATION_JSON_VALUE, })
     public EmployeeModelList<EmployeeModel> getEmployees(@RequestBody ObjectNode objectNode) throws IOException {
-        List<EmployeeModel> employeeModels = employeeService.findEmployees(objectNode.get("firstName").asText(), objectNode.get("lastName").asText());
+        List<EmployeeModel> employeeModels = employeeService.findEmployees(objectNode.get("name").asText());
         EmployeeModelList<EmployeeModel> modelList = new EmployeeModelList<>(employeeModels);
         return modelList;
     }

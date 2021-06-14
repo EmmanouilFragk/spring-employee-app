@@ -84,12 +84,8 @@
         };
         if (!(document.getElementById('name').value === '')) {
             str = document.getElementById('name').value;
-            par1 = str.split(" ")[0];
-            if (str.split(" ")[1] == undefined) par2 = ""
-            else par2 = str.split(" ")[1]
             params = {
-                "firstName": par1,
-                "lastName": par2
+                "name": str,
             };
 
             xhttp.open("POST", "/employee/search", true);
