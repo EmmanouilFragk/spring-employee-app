@@ -24,4 +24,10 @@ public class DepartmentLocationImpl implements DepartmentLocationService {
         }
         return departmentLocationModels;
     }
+
+    @Override
+    public DepartmentLocationModel getDepartmentLocationByLocationId(int locationId) {
+        DepartmentLocation departmentLocation = departmentLocationRepository.findDepartmentLocationByLocationId(locationId);
+        return new DepartmentLocationModel(departmentLocation.getLocationId(), departmentLocation.getLocationName());
+    }
 }

@@ -8,4 +8,5 @@ import java.util.List;
 public interface DepartmentService {
     List<DepartmentModel> getDepartments();
     List<DepartmentModel> getDepartmentsByLocation(int id);
+    DepartmentModel getDepartmentByDepartmentId(int id);
 }

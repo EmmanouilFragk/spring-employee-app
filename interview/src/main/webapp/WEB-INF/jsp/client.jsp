@@ -44,6 +44,8 @@
             <!-- Sidebar Menu -->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column">
+                    <li class="nav-item"><a class="nav-link" href="<c:url value="/home"/>"><spring:message
+                            code="home.page"></spring:message></a></li>
                     <li class="nav-item"><a class="nav-link" href="<c:url value="/client/departmentLocations"/>"><spring:message
                             code="all.locations.list"></spring:message></a></li>
                     <li class="nav-item"><a class="nav-link"

@@ -34,4 +34,10 @@ public class DepartmentServiceImpl implements DepartmentService {
         }
         return departmentModels;
     }
+
+    @Override
+    public DepartmentModel getDepartmentByDepartmentId(int id) {
+        Department department = departmentRepository.findDepartmentByDepartmentId(id);
+        return new DepartmentModel(department.getDepartmentId(), department.getDepartmentName(), department.getDepartmentLocation().getLocationId());
+    }
 }

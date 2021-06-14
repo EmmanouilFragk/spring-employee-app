@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface DepartmentLocationService {
     List<DepartmentLocationModel> getDepartmentLocations();
+    DepartmentLocationModel getDepartmentLocationByLocationId(int locationId);
 }

@@ -87,7 +87,7 @@
                             </button>
 
 
-                            <textarea rows="20" cols="80" style="border:none;">
+                            <textarea rows="20" cols="30" style="border:none;">
                             </textarea>
 
 

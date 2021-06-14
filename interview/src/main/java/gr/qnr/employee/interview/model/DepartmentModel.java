@@ -10,7 +10,7 @@ public class DepartmentModel {
 
     private String departmentName;
 
-    private int DepartmentLocationId;
+    private int departmentLocationId;
 
     public int getDepartmentId() {
         return departmentId;
@@ -29,17 +29,17 @@ public class DepartmentModel {
     }
 
     public int getDepartmentLocationId() {
-        return DepartmentLocationId;
+        return departmentLocationId;
     }
 
     public void setDepartmentLocationId(int departmentLocationId) {
-        DepartmentLocationId = departmentLocationId;
+        departmentLocationId = departmentLocationId;
     }
 
     public DepartmentModel(int departmentId, String departmentName, int departmentLocationId) {
         this.departmentId = departmentId;
         this.departmentName = departmentName;
-        DepartmentLocationId = departmentLocationId;
+        this.departmentLocationId = departmentLocationId;
     }
 
     public DepartmentModel() {

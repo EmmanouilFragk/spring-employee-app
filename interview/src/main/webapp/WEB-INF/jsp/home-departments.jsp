@@ -8,7 +8,7 @@
 <head>
 
     <title><spring:message
-            code="home.page"></spring:message></title>
+            code="departments.by.location.list"></spring:message></title>
     <%@include file="./partials/header.jsp" %>
 
     <%--    <link rel="stylesheet" href="../../resources/utils/css/icon-styles.css">--%>
@@ -66,11 +66,24 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title"><spring:message
-                                code="home.page"></spring:message></h3>
+                        <h3 class="card-title">${locationName}</h3>
                     </div>
                     <div class="card-body">
-                        <section class="content col-md-3">
+                        <section class="content">
+                            <div class="card-body">
+                                <table id="department-list" class="table table-bordered table-hover">
+
+                                    <%@include file="./partials/content/departments/tableheader.jsp" %>
+
+                                    <%@include file="./partials/content/departments/tablebody.jsp" %>
+
+
+                                </table>
+
+<%--                                <%@include file="../partials/content/pagination/table-navigation-pagination.jsp" %>--%>
+
+
+                            </div>
 
 
                         </section>
